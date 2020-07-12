@@ -9,12 +9,13 @@ class UnionFind {
 
     public void union(int u, int v) {
         u = id[u];
+        v = id[v];
         for(int i=0; i<id.length; i++) {
             if(id[i] == u) id[i] = v;
         }
     }
 
-    public boolean find(int u, int v) {
+    public boolean connected(int u, int v) {
         if(id[u] == id[v]) return true;
         else return false;
     }
@@ -68,7 +69,7 @@ class MSTKruskal {
             int p = edges[min][0];
             int q = edges[min][1];
             int cost = edges[min][2];
-            if(!set.find(p,q)) {
+            if(!set.connected(p,q)) {
                 set.union(p,q);
                 mst += cost;
                 System.out.println(p +" "+q+" "+cost);
