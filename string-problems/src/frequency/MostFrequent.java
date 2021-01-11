@@ -11,8 +11,7 @@ public class MostFrequent {
 		String words[] = s.split(" +");
 		System.out.println(Arrays.toString(words));
 	
-		var count = new TreeMap<String, Integer>(
-				);
+		var count = new TreeMap<String, Integer>();
 		
 		Stream.of(words)
 		.map(word -> word.toLowerCase())
